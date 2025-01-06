@@ -1,42 +1,46 @@
 let count = 1;
 const counter = document.getElementById("countVal");
+const decValue = document.getElementById("dec");
+const incValue = document.getElementById("inc");
+const errorDiv = document.getElementById("error");
+const clearValue = document.getElementById("clear");
 counter.textContent = count;
 
 //Increamenting value by 1 on clicking the "increament" button.
-document.getElementById("inc").addEventListener("click", ()=>{
+incValue.addEventListener("click", ()=>{
     count += 1;
     
     if(count <= 0){
-        document.getElementById("dec").disabled = true;
-        document.getElementById("dec").style.cursor = "not-allowed";
+        decValue.disabled = true;
+        decValue.style.cursor = "not-allowed";
         counter.textContent = count;
-        document.getElementById("error").style.display = "block";
-        document.getElementById("clear").style.display = "none";
-        document.getElementById("dec").style.cursor = "not-allowed";
+        errorDiv.style.display = "block";
+        clearValue.style.display = "none";
+        decValue.style.cursor = "not-allowed";
     } else {
-        document.getElementById("dec").disabled = false;
+        decValue.disabled = false;
         counter.textContent = count;
-        document.getElementById("error").style.display = "none";
-        document.getElementById("clear").style.display = "inline";
-        document.getElementById("dec").style.cursor = "pointer";
+        errorDiv.style.display = "none";
+        clearValue.style.display = "inline";
+        decValue.style.cursor = "pointer";
     }
 });
 
 //Decreamenting value by 1 on clicking the "decreament" button.
-document.getElementById("dec").addEventListener("click", ()=>{
+decValue.addEventListener("click", ()=>{
     count -= 1;
     if(count <= 0){
-        document.getElementById("dec").disabled = true;
-        document.getElementById("dec").style.cursor = "not-allowed";
+        decValue.disabled = true;
+        decValue.style.cursor = "not-allowed";
         counter.textContent = count;
-        document.getElementById("error").style.display = "block";
-        document.getElementById("clear").style.display = "none";
+        errorDiv.style.display = "block";
+        clearValue.style.display = "none";
     } else {
-        document.getElementById("dec").disabled = false;
+        decValue.disabled = false;
         counter.textContent = count;
-        document.getElementById("error").style.display = "none";
-        document.getElementById("clear").style.display = "inline";
-        document.getElementById("dec").style.cursor = "pointer";
+        errorDiv.style.display = "none";
+        clearValue.style.display = "inline";
+        decValue.style.cursor = "pointer";
     }
     
 });
@@ -45,17 +49,17 @@ document.getElementById("dec").addEventListener("click", ()=>{
 document.getElementById("clear").addEventListener("click", ()=>{
     count = 0;
     if(count <= 0){
-        document.getElementById("dec").disabled = true;
-        document.getElementById("dec").style.cursor = "not-allowed";
+        decValue.disabled = true;
+        decValue.style.cursor = "not-allowed";
         counter.textContent = count;
-        document.getElementById("error").style.display = "block";
-        document.getElementById("clear").style.display = "none";
-        document.getElementById("dec").style.cursor = "not-allowed";
+        errorDiv.style.display = "block";
+        clearValue.style.display = "none";
+        decValue.style.cursor = "not-allowed";
     } else {
-        document.getElementById("dec").disabled = false;
-        document.getElementById("error").style.display = "none";
-        document.getElementById("clear").style.display = "inline";
-        document.getElementById("dec").style.cursor = "pointer";
+        decValue.disabled = false;
+        errorDiv.style.display = "none";
+        clearValue.style.display = "inline";
+        decValue.style.cursor = "pointer";
     }
     
 });
